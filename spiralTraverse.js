@@ -3,11 +3,8 @@ function spiralTraverse(array){
 
     arrangedArray = []
     end = false;
-    steps = 0;
+    // steps = 0;
     while (!end){
-        
-        // width = array[0].length-1
-        // height = array.length - 1
         
         a = []
         b = [] 
@@ -25,7 +22,7 @@ function spiralTraverse(array){
                 b.push(array[array.length - 1][array[0].length-1-i])
             }
 
-            steps++;
+            // steps++;
         }
 
         // 2.0 Remove Top and Bottom from Array 
@@ -47,14 +44,14 @@ function spiralTraverse(array){
                 
                 // 4.0 Remove Right Element
                 array[h].pop()
-                steps++;
+                // steps++;
             }
 
             // 4.0 Remove Left Element
             for(let h = 0; h <=array.length-1; h++)
             {            
                 array[h].shift()
-                steps++;
+                // steps++;
             }
 
         }else{
@@ -63,10 +60,12 @@ function spiralTraverse(array){
 
         // Combine into an sorted array
         arrangedArray = arrangedArray.concat([...a , ...c , ...b , ...d])
-        steps++;
+        // steps++;
     }
 
-    return steps;
+    // for testing plese uncomment all steps above and return steps
+    // return steps;
+    return arrangedArray; 
 }
 
 
